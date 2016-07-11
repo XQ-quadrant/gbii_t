@@ -7,149 +7,244 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Userinfo */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Userinfos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '用户', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-$this->registerCssFile('@web/media/css/bootstrap-fileupload.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
-$this->registerCssFile('@web/media/css/chosen.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
-$this->registerCssFile('@web/media/css/profile.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
-//$this->registerCssFile('@web/media/css/profile.css',[ 'depends'=> 'frontend\assets\HomeAsset']);
-$this->registerJsFile('@web/media/js/chosen.jquery.min.js',['depends'=>['frontend\assets\MetronicAsset']]);
+//$this->params['page-container-responsive']='page-container-responsive';
+
+//$this->registerCssFile('@web/media/css/bootstrap-fileupload.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
+//$this->registerCssFile('@web/media/css/chosen.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
+//$this->registerCssFile('@web/media/css/profile.css',[ ]);
+//$this->registerCssFile('@web/media/css/profile.css',[ ]);
+//$this->registerJsFile('@web/media/js/chosen.jquery.min.js',['depends'=>['frontend\assets\MetronicAsset']]);
 
 
 ?>
 
-
-    <!--BEGIN TABS-->
-
-    <div class="tabbable tabbable-custom tabbable-full-width">
-
-
-
-            <div class="tab-pane row-fluid active sale-summary" id="tab_1_1">
-
-                <ul class="unstyled profile-nav span3">
-
-                    <li><img src="../../media/image/profile-img.png" alt="" /> <!--<a href="#" class="profile-edit">edit</a>--></li>
-
-                    <li>
-
-                        <span class="sale-info">学校 <i class="icon-weibo"></i></span>
-
-                        <span class="sale-num"><?=$model->school ?></span>
-
-                    </li>
-
-
-
-                </ul>
-
-
-                <div class="span9">
-
-                    <div class="row-fluid">
-
-                        <div class="span8 profile-info">
-
-                            <h1><?=$model->name ?></h1>
-                            <hr>
-                            <span style="font-size: larger">简介：</span>
-                            <p><?=$model->intro ?> </p>
-
-
-
-                            <!--<ul class="unstyled inline">
-
-                                <li><i class="icon-map-marker"></i> Spain</li>
-
-                                <li><i class="icon-calendar"></i> 18 Jan 1982</li>
-
-                                <li><i class="icon-briefcase"></i> Design</li>
-
-                                <li><i class="icon-star"></i> Top Seller</li>
-
-                                <li><i class="icon-heart"></i> BASE Jumping</li>
-
-                            </ul>-->
-
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="profile-pic text-center">
+                            <img alt="" src="images/photos/user1.png">
                         </div>
-
-                        <!--end span8-->
-
-                        <!--<div class="span4">
-
-                            <div class="portlet sale-summary">
-
-                                <div class="portlet-title">
-
-                                    <div class="caption">Sales Summary</div>
-
-                                    <div class="tools">
-
-                                        <a class="reload" href="javascript:;"></a>
-
-                                    </div>
-
-                                </div>
-
-                                <ul class="unstyled">
-
-                                    <li>
-
-                                        <span class="sale-info">TODAY SOLD <i class="icon-img-up"></i></span>
-
-                                        <span class="sale-num">23</span>
-
-                                    </li>
-
-                                    <li>
-
-                                        <span class="sale-info">WEEKLY SALES <i class="icon-img-down"></i></span>
-
-                                        <span class="sale-num">87</span>
-
-                                    </li>
-
-                                    <li>
-
-                                        <span class="sale-info">TOTAL SOLD</span>
-
-                                        <span class="sale-num">2377</span>
-
-                                    </li>
-
-                                    <li>
-
-                                        <span class="sale-info">EARNS</span>
-
-                                        <span class="sale-num">$37.990</span>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>-->
-
-                        <!--end span4-->
-
                     </div>
-
-                    <!--end row-fluid-->
-
-
-
                 </div>
-
-                <!--end span9-->
-
             </div>
-
-            <!--end tab-pane-->
-
-
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <ul class="p-info">
+                            <li>
+                                <div class="title">Gender</div>
+                                <div class="desk">Male</div>
+                            </li>
+                            <li>
+                                <div class="title">Founder</div>
+                                <div class="desk">ABC Inc.</div>
+                            </li>
+                            <li>
+                                <div class="title">Education</div>
+                                <div class="desk"><?=$model->school ?></div>
+                            </li>
+                            <li>
+                                <div class="title">Project Done</div>
+                                <div class="desk">50+</div>
+                            </li>
+                            <li>
+                                <div class="title">注册时间</div>
+                                <div class="desk">HTML, CSS, JavaScript.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body p-states">
+                        <div class="summary pull-left">
+                            <h4>Total <span>Sales</span></h4>
+                            <span>Monthly Summary</span>
+                            <h3>$ 5,600</h3>
+                        </div>
+                        <div id="expense" class="chart-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body p-states green-box">
+                        <div class="summary pull-left">
+                            <h4>Product <span>refund</span></h4>
+                            <span>Monthly Summary</span>
+                            <h3>160</h3>
+                        </div>
+                        <div id="pro-refund" class="chart-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body p-states">
+                        <div class="summary pull-left">
+                            <h4>Total <span>Earning</span></h4>
+                            <span>Monthly Summary</span>
+                            <h3>$ 51,2600</h3>
+                        </div>
+                        <div id="expense2" class="chart-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="profile-desk">
+                            <h1><?=$model->name ?></h1>
+                            <span class="designation"><?=$model->school ?> 附近</span>
+                            <p>
+                                <?=$model->intro ?>
+                            </p>
+                            <a class="btn p-follow-btn pull-left" href="#"> <i class="fa fa-check"></i> Following</a>
 
-    <!--END TABS-->
+                            <ul class="p-social-link pull-right">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <form>
+                        <textarea class="form-control input-lg p-text-area" rows="2" placeholder="Whats in your mind today?"></textarea>
+                    </form>
+                    <footer class="panel-footer">
+                        <button class="btn btn-post pull-right">Post</button>
+                        <ul class="nav nav-pills p-option">
+                            <li>
+                                <a href="#"><i class="fa fa-user"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-camera"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa  fa-location-arrow"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-meh-o"></i></a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <header class="panel-heading">
+                        recent activities
+                                    <span class="tools pull-right">
+                                        <a class="fa fa-chevron-down" href="javascript:;"></a>
+                                        <a class="fa fa-times" href="javascript:;"></a>
+                                     </span>
+                    </header>
+                    <div class="panel-body">
+                        <ul class="activity-list">
+                            <li>
+                                <div class="avatar">
+                                    <img src="images/photos/user1.png" alt=""/>
+                                </div>
+                                <div class="activity-desk">
+                                    <h5><a href="#">Jonathan Smith</a> <span>Uploaded 5 new photos</span></h5>
+                                    <p class="text-muted">7 minutes ago near Alaska, USA</p>
+                                    <div class="album">
+                                        <a href="#">
+                                            <img alt="" src="images/gallery/image1.jpg">
+                                        </a>
+                                        <a href="#">
+                                            <img alt="" src="images/gallery/image2.jpg">
+                                        </a>
+                                        <a href="#">
+                                            <img alt="" src="images/gallery/image3.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="avatar">
+                                    <img src="images/photos/user2.png" alt=""/>
+                                </div>
+                                <div class="activity-desk">
+                                    <h5><a href="#">John Doe</a> <span>Completed the Sight visit.</span></h5>
+                                    <p class="text-muted">2 minutes ago near Alaska, USA</p>
+                                    <div class="location-map">
+                                        <div id="map-canvas"></div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="avatar">
+                                    <img src="images/photos/user3.png" alt=""/>
+                                </div>
+                                <div class="activity-desk">
+
+                                    <h5><a href="#">Jonathan Smith</a> <span>attended a meeting with</span>
+                                        <a href="#">John Doe.</a></h5>
+                                    <p class="text-muted">2 days ago near Alaska, USA</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="avatar">
+                                    <img src="images/photos/user4.png" alt=""/>
+                                </div>
+                                <div class="activity-desk">
+
+                                    <h5><a href="#">Jonathan Smith</a> <span>completed the task “wireframe design” within the dead line</span></h5>
+                                    <p class="text-muted">4 days ago near Alaska, USA</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="avatar">
+                                    <img src="images/photos/user5.png" alt=""/>
+                                </div>
+                                <div class="activity-desk">
+
+                                    <h5><a href="#">Jonathan Smith</a> <span>was absent office due to sickness</span></h5>
+                                    <p class="text-muted">4 days ago near Alaska, USA</p>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 

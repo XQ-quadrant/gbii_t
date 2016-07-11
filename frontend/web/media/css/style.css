@@ -36,7 +36,7 @@ Reset and overrides
 ***/
 /* general body settings */
 body { 
-  color: #000; 
+  color: #3a4243;
   font-family: 'Open Sans';
   padding: 0px !important;
   margin: 0px !important;
@@ -5308,4 +5308,8 @@ Datatables Plugin(in v1.3)
 .dataTable .details tr:nth-child(even) td,
 .dataTable .details tr:nth-child(even) th {
   background-color: #eee !important;
+}
+
+.room-form{
+  color: #3a4243;
 }

@@ -9,6 +9,72 @@ use yii\widgets\ActiveForm;
 
 
 ?>
+<div class="col-lg-6">
+    <section class="panel">
+        <header class="panel-heading">
+            Horizontal Forms
+        </header>
+        <div class="panel-body">
+
+            <?= $form->field($model, 'weibo')->textInput(['maxlength' => true,'class'=>"m-wrap span8"]) ?>
+
+            <?= $form->field($model, 'address')->textInput(['class'=>"m-wrap span8"]) ?>
+
+            <?= $form->field($model, 'intro')->textarea(['rows' => 6,'class'=>"m-wrap span8"]) ?>
+
+
+            <?= $form->field($model, 'icon')->textInput(['rows' => 6,'class'=>"m-wrap span8"]) ?>
+
+
+
+            <!-- <?/*= //$form->field($model, 'stu_id')->textInput(['maxlength' => true]) */?>
+
+    <?/*= //$form->field($model, 'landlord_id')->textInput() */?>
+
+   <?/*= //$form->field($model, 'u_status')->textInput() */?> -->
+
+            <?= $form->field($model, 'qq')->textInput(['class'=>"m-wrap span8"]) ?>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputEmail1" placeholder="Email" type="email">
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputPassword1" placeholder="Password" type="password">
+                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile2" class="col-lg-2 col-sm-2 control-label">File input</label>
+                    <div class="col-lg-10">
+                        <input id="exampleInputFile2" type="file">
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>
 <div class="tab-pane row-fluid profile-account" id="tab_1_3">
 
     <div class="row-fluid">

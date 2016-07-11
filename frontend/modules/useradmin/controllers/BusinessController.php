@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
  */
 class BusinessController extends Controller
 {
-    public $layout='main.php';
+    public $layout='ex.php';
     public $enableCsrfValidation = false;
 
     public function behaviors()
@@ -210,6 +210,11 @@ class BusinessController extends Controller
             //var_dump($data["Room"]);
             if ($model->load($data) && $model->save()) {
                 return $this->redirect(['index']);
+            }else {
+                $model->facility= json_decode($model->facility);
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
             }
         }else {
             $model->facility= json_decode($model->facility);

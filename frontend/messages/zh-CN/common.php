@@ -6,5 +6,6 @@
  * Time: 上午2:10
  */
 return [
-    'Yii China' => 'Yii gbii平台',
+    'Yii China' => 'Yii 中国',
+    'Home' => '宿宿',
 ];

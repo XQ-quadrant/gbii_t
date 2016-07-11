@@ -16,11 +16,21 @@ return [
         'useradmin' => [
             'class' => 'frontend\modules\useradmin\Useradmin',
         ],
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+
+        ],
     ],
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+            'identityCookie' => [
+                'name'     => '_backendIdentity',
+                'path'     => '/',
+                'httpOnly' => true,
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -69,5 +79,6 @@ return [
         ],
         */
     ],
+
     'params' => $params,
 ];

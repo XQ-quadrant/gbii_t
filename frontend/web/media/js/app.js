@@ -226,6 +226,12 @@ var App = function () {
         return sidebarHeight; 
     }
 
+    var handleImgDelete = function(){
+        $(".caption").on('click',function(){
+            alert('haha');
+        });
+    }
+
     var handleFixedSidebar = function () {
         var menu = $('.page-sidebar-menu');
 
@@ -718,7 +724,7 @@ var App = function () {
         init: function () {
 
             //IMPORTANT!!!: Do not modify the core handlers call order.
-
+            handleImgDelete();
             //core handlers
             handleInit();
             handleResponsiveOnResize(); // set and handle responsive    

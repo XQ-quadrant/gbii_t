@@ -44,9 +44,9 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
             <!-- BEGIN LOGO -->
 
-            <a class="brand" href="index.html">
-
-                <img src="media/image/logo.png" alt="logo" />
+            <a class="brand brand-logo" href="index.html">
+                  宿宿运营中心
+                <!--<img src="media/image/logo.png" alt="logo" />-->
 
             </a>
 
@@ -159,7 +159,7 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
 								<span class="subject">
 
-								<span class="from">Bob Nilson</span>
+								<span class="from">黑妞</span>
 
 								<span class="time">2 hrs</span>
 
@@ -388,7 +388,7 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
                     <i class="icon-cogs"></i>
 
-                    <span class="title">我的主页</span>
+                    <span class="title">文档管理</span>
 
                     <span class="selected"></span>
 
@@ -443,7 +443,7 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
                     <i class="icon-bookmark-empty"></i>
 
-                    <span class="title">我的住宿</span>
+                    <span class="title">权限管理</span>
 
                     <span class="arrow "></span>
 
@@ -453,17 +453,17 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
                     <li >
 
-                        <a href="ui_general.html">
+                        <a href="<?=Url::toRoute('/item')?>">
 
-                            当前住宿</a>
+                            角色与权限</a>
 
                     </li>
 
                     <li >
 
-                        <a href="ui_buttons.html">
+                        <a href="<?=Url::toRoute('/item-child')?>">
 
-                            预订</a>
+                            权限赋予</a>
 
                     </li>
 
@@ -484,9 +484,9 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
                 <a href="javascript:;">
 
-                    <i class="icon-table"></i>
+                    <i class="icon-star-empty"></i>
 
-                    <span class="title">房东助手</span>
+                    <span class="title">宿宿の花园</span>
 
                     <span class="arrow "></span>
 
@@ -670,33 +670,14 @@ $this->registerJs(" var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-375647
 
                     <h3 class="page-title">
 
-                        Blank Page <small>blank page</small>
+                        <?=  $this->title ?> <small>blank page</small>
 
                     </h3>
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ]) ?>
+                    <?= Alert::widget() ?>
 
-                    <ul class="breadcrumb">
-
-                        <li>
-
-                            <i class="icon-home"></i>
-
-                            <a href="index.html">Home</a>
-
-                            <i class="icon-angle-right"></i>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#">Layouts</a>
-
-                            <i class="icon-angle-right"></i>
-
-                        </li>
-
-                        <li><a href="#">Blank Page</a></li>
-
-                    </ul>
 
                     <!-- END PAGE TITLE & BREADCRUMB-->
 

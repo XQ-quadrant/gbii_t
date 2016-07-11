@@ -15,7 +15,7 @@ use yii\filters\VerbFilter;
  */
 class LoaderController extends Controller
 {
-    public $layout='main.php';
+    public $layout='ex.php';
     public function actions()
     {
         return [

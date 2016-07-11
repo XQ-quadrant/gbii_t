@@ -14,17 +14,19 @@ use yii\web\View;
 $this->title = 'Rooms';
 //$this->params['breadcrumbs'][] = $this->title;
 $this->params['banner'] = 'search';
-$this->registerCssFile('@web/home/css/media.css',[ 'depends'=> 'frontend\assets\HomeAsset']);
-$this->registerJs("$(document).ready(function() {
+$this->params['page-container-responsive']='page-container-responsive';
+$this->registerCssFile('@web/ex/css/media.css',[ 'depends'=> 'frontend\assets\ExAsset']);
+/*$this->registerJs("$(document).ready(function() {
 
 				$().UItoTop({ easingType: 'easeOutQuart' });
 
-		});",View::POS_END);
+		});",View::POS_END);*/
 $data = $dataProvider->getModels();
 $count = $dataProvider->getCount();
 $pages = new Pagination([ 'totalCount' =>$count, 'pageSize' => 18]);
 ?>
-<div class="room-index">
+
+<div class="room-index ">
 
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -32,7 +34,7 @@ $pages = new Pagination([ 'totalCount' =>$count, 'pageSize' => 18]);
     <?php
     //var_dump($dataProvider->getModels());die();
     ?>
-    <div id="content" class="col-lg-12">
+    <div id="content" class="">
         <!-- PAGE HEADER-->
 
         <div id="dedicated_servers">
@@ -47,9 +49,7 @@ $pages = new Pagination([ 'totalCount' =>$count, 'pageSize' => 18]);
                  <div class="clearfix"></div>
              </div>-->
             <div class="ds">
-                <div class="ds_processor">西南交通大学 周边</div>
-
-
+                <div class="ds_processor">西南交通大学</div>
 
                 <div class="ds_cores"><a href="<?= \yii\helpers\Url::current(['sort'=>(Yii::$app->request->get('sort')=='price')?'-price':'price'])?>">综合排序</a></div>
                 <div class="ds_diskspace"><a href="<?= \yii\helpers\Url::current(['sort'=>(Yii::$app->request->get('sort')=='price')?'-price':'price'])?>">价格</a></div>
@@ -71,15 +71,15 @@ $pages = new Pagination([ 'totalCount' =>$count, 'pageSize' => 18]);
         <div class="">
             <?php /*$i = $dataProvider->getModels()['start'];*/?>
             <?php foreach ( $data as $list):?>
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="well-media">
-                        <div class="vendor" style="height: 210px;overflow: hidden">
-                            <a class="fancybox" rel="group" href="<?=Url::to('@web/room/view?id='.$list[ 'id']) ?>">
+                        <div class="vendor" style="height: 160px;overflow: hidden">
+                            <a class="fancybox" rel="group" href="<?=Url::to('@web/room/view?id='.$list[ 'id']) ?>" target="_blank">
                                 <img class="img-responsive-media" src="<?=$list[ 'pic'] ?>" alt="" style="">
                             </a>
                         </div>
                         <div class="video-text">
-                            <a href="<?=Url::to('@web/room/view?id='.$list[ 'id']) ?>" style="font-size: 1.1em"><?= Html::encode($list[ 'title']) ?></a>
+                            <a href="<?=Url::to('@web/room/view?id='.$list[ 'id']) ?>" style="font-size: 1.2em;color: #4E89E2;" target="_blank"><?= Html::encode($list[ 'title']) ?></a>
 
                             <p style="color: #576569"><?= Html::encode($list[ 'address']) ?></p>
                         </div>
@@ -107,6 +107,8 @@ $pages = new Pagination([ 'totalCount' =>$count, 'pageSize' => 18]);
     <!--<ul class="pagination pagination-lg">
         {$page}
     </ul>-->
+<script>
 
+</script>
 
 </div>

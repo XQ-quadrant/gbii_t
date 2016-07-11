@@ -5,7 +5,7 @@ Default theme
 Reset and overrides  
 ***/
 body {
-  background-color: #3d3d3d !important;
+  background-color: #f9f9f9 !important;
 }
 /***
 Page header
@@ -13,43 +13,46 @@ Page header
 .header .navbar-inner {
   filter: none !important;
   background-image: none !important;
-  background-color: #212121 !important;
+  background-color: #DBE1E8 !important;
 }
 .header .btn-navbar {
   background-color: #212121 !important;
 }
 .header .nav .dropdown-toggle:hover,
 .header .nav .dropdown.open .dropdown-toggle {
-  background-color: #383838 !important;
+  background-color: #ACBDD0 !important;
 }
 .header .nav li.dropdown .dropdown-toggle i {
   color: #8a8a8a !important;
+}
+.header .nav > li.dropdown.user .dropdown-toggle .username {
+  color: #474c4f;
 }
 /***
 Page sidebar
 ***/
 .page-sidebar {
-  background-color: #3d3d3d;
+  background-color: rgb(249, 249, 249);
 }
 ul.page-sidebar-menu > li > a {
-  border-top: 1px solid #5c5c5c !important;
-  color: #ffffff !important;
+  /*border-top: 1px solid #5c5c5c !important;*/
+  color: rgb(8, 120, 220) !important;
 }
 ul.page-sidebar-menu > li:last-child > a {
   border-bottom: 1px solid transparent !important;
 }
 ul.page-sidebar-menu > li a i {
-  color: #969696;
+  color: #0878DC;
 }
 ul.page-sidebar-menu > li.open > a,
 ul.page-sidebar-menu > li > a:hover,
 ul.page-sidebar-menu > li:hover > a {
-  background: #303030;
+  background: #FFFFFF;
 }
 ul.page-sidebar-menu > li.active > a {
-  background: #e02222 !important;
+  background:rgb(79, 116, 148) !important;
   border-top-color: transparent !important;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 ul.page-sidebar-menu > li.active > a i {
   color: #ffffff;
@@ -60,10 +63,11 @@ ul.page-sidebar-menu > li > ul.sub-menu > li:first-child > a {
 ul.page-sidebar-menu > li > ul.sub-menu > li.active > a,
 ul.page-sidebar-menu > li > ul.sub-menu > li > a:hover {
   color: #ffffff !important;
-  background: #575757 !important;
+  background:#8DACC7 !important;
 }
 ul.page-sidebar-menu > li > ul.sub-menu > li > a:hover {
-  background: #575757 !important;
+  background: rgb(219, 225, 232) !important;
+  color: #b9e5ff;
 }
 /* 3rd level sub menu */
 ul.page-sidebar-menu > li > ul.sub-menu li > ul.sub-menu > li.active > a,
@@ -74,7 +78,7 @@ ul.page-sidebar-menu > li > ul.sub-menu li.open > a {
 }
 /* font color for all sub menu links*/
 ul.page-sidebar-menu li > ul.sub-menu > li > a {
-  color: #bdbdbd;
+  color: #587F96;
 }
 /* menu arrows */
 ul.page-sidebar-menu > li > a .arrow:before,
@@ -107,11 +111,11 @@ ul.page-sidebar-menu > li.active > a .arrow.open:before {
   color: #7d7d7d !important;
 }
 .page-sidebar .sidebar-search input {
-  background-color: #3d3d3d !important;
+  background-color: rgba(255, 255, 255, 0) !important;
   color: #bfbfbf !important;
 }
 .page-sidebar .sidebar-search .input-box {
-  border-bottom: 1px solid #7d7d7d !important;
+  border-bottom: 1px solid #D6D4D4 !important;
 }
 .page-sidebar .sidebar-search .submit {
   background-image: url(../image/search-icon.png);
@@ -170,6 +174,12 @@ Horizontal Menu(new in v1.2)
   /* Internet Explorer 10+ */
 
   color: #d6d6d6;
+}
+.brand-logo{
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+  color: rgba(80, 85, 97, 0.8) !important;
+  letter-spacing:2px;
 }
 /***
 Footer 

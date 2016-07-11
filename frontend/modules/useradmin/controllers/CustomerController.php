@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
  */
 class CustomerController extends Controller
 {
-    public $layout='main.php';
+    public $layout='ex.php';
 
     public function actions()
     {
@@ -78,7 +78,9 @@ class CustomerController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {return $this->render('view', [
+    {
+        $this->layout='fex.php';
+        return $this->render('view', [
         'model' => Userinfo::find()->where(['user_id'=>Yii::$app->user->identity->id])->one()//$this->findModel($id),
     ]);
         /*$dataProvider = new ActiveDataProvider([

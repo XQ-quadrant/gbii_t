@@ -10,16 +10,17 @@ $this->params['breadcrumbs'][] = ['label' => '个人中心', 'url' => ['index']]
 //$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '修改信息';
 
-$this->registerCssFile('@web/media/css/bootstrap-fileupload.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
-$this->registerCssFile('@web/media/css/chosen.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
-$this->registerCssFile('@web/media/css/profile.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
+//$this->registerCssFile('@web/media/css/bootstrap-fileupload.css',[ 'depends'=> 'frontend\assets\MetronicAsset']);
+//$this->registerCssFile('@web/media/css/chosen.css',[ ]);
+//$this->registerCssFile('@web/media/css/profile.css');
 //$this->registerCssFile('@web/media/css/profile.css',[ 'depends'=> 'frontend\assets\HomeAsset']);
-$this->registerJsFile('@web/media/js/chosen.jquery.min.js',['depends'=>['frontend\assets\MetronicAsset']]);
+//$this->registerJsFile('@web/media/js/chosen.jquery.min.js');
 
 ?>
+
 <div class="userinfo-update">
 
-    <h3><?= Html::encode($this->title) ?></h3>
+
     <?php
 
     /*if(Yii::$app->user->identity->status != \common\models\User::STATUS_LOADER){

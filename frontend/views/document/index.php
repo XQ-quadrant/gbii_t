@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Documents';
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['page-container-responsive']='page-container-responsive';
 ?>
 <div class="document-index">
 

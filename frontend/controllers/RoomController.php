@@ -27,7 +27,7 @@ class RoomController extends Controller
             ],
         ];
     }
-    public $layout = 'home.php';
+    public $layout = 'fex.php';
     /**
      * Lists all Room models.
      * @return mixed

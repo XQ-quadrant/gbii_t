@@ -11,44 +11,41 @@ use yii\web\View;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => '租房', 'url' => ['index']];
 //$this->params['breadcrumbs'][] = $this->title;
-//$this->registerJsFile('@web/hdp/unitegallery/js/jquery-11.0.min.js',['depends'=>['frontend\assets\HomeAsset']],View::POS_HEAD);
+$this->registerCssFile('@web/home/css/roomdetail.css',[ ]);
 
-$this->registerCssFile('@web/hdp/unitegallery/css/unite-gallery.css',[ 'depends'=> 'frontend\assets\HomeAsset']);
-$this->registerCssFile('@web/hdp/unitegallery/themes/default/ug-theme-default.css',[ 'depends'=> 'frontend\assets\HomeAsset']);
-$this->registerCssFile('@web/home/css/roomdetail.css',[ 'depends'=> 'frontend\assets\HomeAsset']);
-$this->registerCss("#gallery {margin: 0 auto;}");
-$this->registerJsFile('@web/hdp/unitegallery/js/unitegallery.min.js',['depends'=>['frontend\assets\HomeAsset']]);
-$this->registerJsFile('@web/hdp/unitegallery/themes/default/ug-theme-default.js',['depends'=>['frontend\assets\HomeAsset']]);
+//$this->registerCss("#gallery {margin: 0 auto;}");
+//$this->registerJsFile('@web/hdp/unitegallery/js/unitegallery.min.js');
+//$this->registerJsFile('@web/hdp/unitegallery/themes/default/ug-theme-default.js');
+$this->registerJsFile('@web/unitegallery/package/unitegallery/js/unitegallery.min.js',['depends'=> 'frontend\assets\ExAsset','position'=>View::POS_END]);
+$this->registerCssFile('@web/unitegallery/package/unitegallery/css/unite-gallery.css',[ 'depends'=> 'frontend\assets\ExAsset'],View::POS_HEAD);
+
+$this->registerJsFile("@web/unitegallery/package/unitegallery/themes/compact/ug-theme-compact.js",['depends'=> 'frontend\assets\ExAsset','position'=>View::POS_END]);
 $this->registerJsFile('@web/gb/js/collect.js');
-$this->registerJs("$(document).ready(function() {
-                jQuery(\"#gallery\").unitegallery({
-                     theme_enable_text_panel: false
-                    });
-				$().UItoTop({ easingType: 'easeOutQuart' });
-				var cc = collect();
+$this->registerJs("
+jQuery(document).ready(function(){
 
-		});",View::POS_END);
+			jQuery(\"#gallery\").unitegallery({
+
+			});
+
+		});
+",View::POS_END);
 
 //$this->params['banner']['pic'] = $model->pic;
 $this->params['banner_pic'] = $model->pic;
 ?>
 <div class="room-view">
 
-    <h1></h1>
 
-    <div class="bolg-posts">
-        <div class="container">
+
             <div class="single">
 
                 <div class="top-single">
 
                     <div class="grid-single">
                         <div class="" style="float: left">
-                        <?= Breadcrumbs::widget([
-                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                        ]) ?>
-                        <?= Alert::widget() ?>
-                            </div>
+
+                        </div>
                         <div class="single-one" style="background-color: rgba(17, 204, 172, 0.75);">
 
                             <span style="font-size: 1.3em;color: #FFFFFF"><i class="fa fa-jpy"> </i><strong><?= Html::encode($model->price) ?></strong> 元/月</span>
@@ -58,47 +55,52 @@ $this->params['banner_pic'] = $model->pic;
                     </div>
 
                     <div class='row' style="padding:0px 0px;">
-                        <div class='col-md-7 '>
-                            <div id="gallery" style="display:none;">
-                                <!--<volist name="pic" id="vo" offset="0">-->
-                                <?php foreach ($model->photos['photos'] as $photo): ?>
-                                    <img alt="Preview Image 1"
-                                         src="<?= $photo['path']?>"
-                                         data-image="<?= $photo['path']?>"
-                                         data-description="Preview Image 1 Description">
-                                <!--</volist>-->
-                                <?php endforeach ?>
-                            </div>
-                        </div>
-                        <div class="col-md-5"  style="border: 1px solid #d7d7d7;padding: 5px 25px">
+                        <div class='col-md-7 ' style="padding-bottom:1em">
 
+                            <div id="gallery" style="display:none;">
+                                <?php foreach ($model->photos['photos'] as $photo): ?>
+                                <img alt="Preview Image 1"
+                                     src="<?= $photo['path']?>"
+                                     data-image="<?= $photo['path']?>"
+                                     data-description="Preview Image 1 Description">
+
+                                <?php endforeach ?>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-5"   style="padding-bottom: 1em">
+                             <div style="border: 1px solid #d7d7d7;padding: 5px 25px;    min-height: 363px;">
                             <div class="row">
                                 <div class="address">
-                                    <div class='invoice-title'>基本信息</div>
+                                    <h5>基本信息</h5>
                                     <div class="address-left">
-                                        <p><strong> 类 型 ：</strong></p>
-                                        <p><strong> 户 型 ：</strong><?= Html::encode($model->atrribute) ?></p>
-                                        <p><strong> 面 积 ：</strong><?= Html::encode($model->area) ?>平方米</p>
-                                        <p><strong> 楼 层 ：</strong>3楼</p>
+                                        <p><span> 类 型 ：</span></p>
+                                        <p><span> 户 型 ：</span><?= Html::encode($model->atrribute) ?></p>
+                                        <p><span> 面 积 ：</span><?= Html::encode($model->area) ?>平方米</p>
+                                        <p><span> 楼 层 ：</span>3楼</p>
                                     </div>
                                     <div class="address-left">
 
-                                        <p><strong> 床 位  ：</strong><?= Html::encode($model->userlimit) ?>人</p>
-                                        <p><strong> 卫生间 ：</strong>独卫</p>
-                                        <p><strong> 厨房  ：</strong>有</p>
+                                        <p><span> 床 位  ：</span><?= Html::encode($model->userlimit) ?>人</p>
+                                        <p><span> 卫生间 ：</span>独卫</p>
+                                        <p><span> 厨房  ：</span>有</p>
 
                                     </div>
 
                                     <div class="clearfix"> </div>
-                                    <p><strong> 地 址 ：</strong><?= Html::encode($model->address) ?></p>
+                                    <p><span> 地 址 ：</span><?= Html::encode($model->address) ?></p>
                                 </div>
                             </div>
 
                             <div class="row" >
-                                <div class='col-sm-6 seller'>
-                                    <div class='invoice-title'>家居设施</div>
+
                                     <!--<i class='fa fa-arrow-right'></i>-->
-                                    <address>
+                                    <div class="address">
+                                        <h5>设施</h5>
+                                        <div class="address-left">
                                         <?php $fd = json_decode($model->facility);
                                         for ($i =0 ;$i<count($fd);$i+=2){
 
@@ -108,19 +110,20 @@ $this->params['banner_pic'] = $model->pic;
                                             <br>
 
                                         <?php } ?>
-                                    </address>
-                                </div>
-                                <div class='col-sm-6 buyer'>
-                                    <div class='invoice-title'>&nbsp;</div>
-                                    <address>
+                                        </div>
+
+
+
+                                <div class="address-dright">
                                     <?php for ($i =1 ;$i<count($fd);$i+=2){ ?>
                                         <span class="entypo-briefcase">&nbsp;<?=$fd[$i]?></span>
                                         <br>
                                     <?php } ?>
-                                    </address>
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
 
+                            </div>
+                             </div>
                         </div>
 
                         <div class="col-md-8">
@@ -137,8 +140,8 @@ $this->params['banner_pic'] = $model->pic;
                                         <span class="username" style="font-size: 1.6em"><img class="cricle" alt="" src="/Sdorms/Public/main/img/avatars/avatar3.jpg"> <?=$roomUser->username ?></span>
                                     </a></li>
                                 <li>
-                                    <span class="dt-sc-button_left small" style="font-size: 1.3em;">
-                                        <p style="float: left;font-size: 0.7em"><i class="fa fa-phone"></i>订房电话：</p>
+                                    <span class="dt-sc-button_left small" style="font-size: 1.2em; letter-spacing: 2px;">
+                                       <i class="fa fa-phone"></i>订房电话：
                                         <?= Html::encode($model->connect) ?></span></li>
                                 <li><span style="font-size: 1em;color: #464b4c"><p style="float: left;font-size: 0.9em">收费模式：</p><?= Html::encode($model->pay) ?></span></li>
                                 <li>
@@ -154,7 +157,7 @@ $this->params['banner_pic'] = $model->pic;
                             <div class="box" style="margin-top: 5%;">
                                 <div class="box-title">
                                     <!--<h4>详细描述</h4>-->
-                                    <div class='invoice-title'>详细描述</div>
+                                    <h5 >详细描述</h5>
 
                                 </div>
                                 <div class="box-body font-400">
@@ -193,8 +196,8 @@ $this->params['banner_pic'] = $model->pic;
 
                 </div>
             </div>
-        </div>
-    </div>
+
+
 </div>
 
 

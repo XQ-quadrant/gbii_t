@@ -6,4 +6,8 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
     ],
+    'aliases' => [
+        '@views' => '@app/views',
+        '@bar' => 'http://www.example.com',
+    ],
 ];

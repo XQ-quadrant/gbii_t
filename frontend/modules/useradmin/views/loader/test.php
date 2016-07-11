@@ -8,65 +8,61 @@
 
 use yii\widgets\ActiveForm;
 use common\widgets\file_upload\FileUpload;   //引入扩展
-use yii\helpers\Html
+use yii\helpers\Html;
+$template = '{label}<div class="col-sm-10">{input}{error}{hint}</div>';
+$label = ['class'=>"col-lg-2 col-sm-2 control-label"];
 //echo FileUpload::widget('common\widgets\file_upload\FileUpload',['config'=>['value'=>'ccc']]) ;
 ?>
-<?php $form = ActiveForm::begin(); ?>
-<div class="tab-content">
+<div class="col-lg-10">
+    <section class="panel">
+        <header class="panel-heading">
+            房东身份验证
+        </header>
+        <div class="panel-body">
+            <?php $form = ActiveForm::begin(['options' => ['class'=>'form-horizontal']]); ?>
+            <!--<form class="form-horizontal" role="form">-->
 
-    <div id="tab_1-1" class="tab-pane active">
-
-        <div style="height: auto;" id="accordion1-1" class="accordion collapse">
-
-
-            <?= $form->field($model, 'weibo')->textInput(['maxlength' => true,'class'=>"m-wrap span8"]) ?>
-
-
-            <?= $form->field($model, 'infro')->textarea(['rows' => 6,'class'=>"m-wrap span8"]) ?>
+                <?= $form->field($model, 'weibo',['template' => $template])->textInput(['maxlength' => true,'class'=>"form-control "])->label(null,$label) ?>
 
 
+                <?= $form->field($model, 'infro',['template' => $template])->textarea(['rows' => 6,'class'=>"form-control "])->label(null,$label) ?>
 
 
-            <?= $form->field($model, 'name')->textInput(['maxlength' => true,'class'=>"m-wrap span8"]) ?>
 
-            <?= $form->field($model, 'tel')->textInput(['maxlength' => true,'class'=>"m-wrap span8"]) ?>
 
-            <?= $form->field($model, 'person_id')->textInput(['maxlength' => true,'class'=>"m-wrap span8"]) ?>
+                <?= $form->field($model, 'name',['template' => $template])->textInput(['maxlength' => true,'class'=>"form-control md-input"])->label(null,$label) ?>
+
+                <?= $form->field($model, 'tel',['template' => $template])->textInput(['maxlength' => true,'class'=>"form-control md-input"])->label(null,$label) ?>
+
+                <?= $form->field($model, 'person_id',['template' => $template])->textInput(['maxlength' => true,'class'=>"form-control "])->label(null,$label) ?>
+
+
+                <br />
             <p>房东必须通过身份证验证 </p>
 
-            <br />
 
-            <div class="controls">
+                    <div class="col-sm-10 fileupload fileupload-new" data-provides="fileupload">
+                        <?= $form->field($model, 'person_card')->widget('common\widgets\file_upload\FileUpload',[
+                            'config'=>[]
+                        ]) ?>
 
-                <div class="space10"></div>
+                    </div>
 
-                <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <?= $form->field($model, 'person_card')->widget('common\widgets\file_upload\FileUpload',[
-                        'config'=>[]
-                    ]) ?>
 
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <?= Html::submitButton($model->isNewRecord ? '保存' : '保存', ['class' => $model->isNewRecord ? 'btn ' : 'btn ']) ?>
+
+
+                    </div>
                 </div>
-
-
-                <div class="space10"></div>
-
-                <div class="submit-btn">
-                    <?= Html::submitButton($model->isNewRecord ? '保存' : '保存', ['class' => $model->isNewRecord ? 'btn green' : 'btn greens']) ?>
-
-                    <!-- <a class="btn green" data-toggle="tab" href="#tab_2-2">下一步</a>
-
-
-                     <a href="#" class="btn">Cancel</a>-->
-
-                </div>
-
-
-            </div>
-
+                    <?php ActiveForm::end(); ?>
         </div>
-    </div>
-
+    </section>
 
 </div>
-<?php ActiveForm::end(); ?>
+
+
+
 </div>

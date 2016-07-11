@@ -1162,7 +1162,7 @@ div#dedicated_servers {
 }
 div#breadcrumb_wrapper h3 {
   text-transform: uppercase;
-  font-size: 1.9999em;
+  /*font-size: 1.9999em;*/
   margin-top: 12px;
   margin-bottom: 5px;
 }
@@ -2216,7 +2216,7 @@ ul.start li span.prev ,ul.start li a.next{
   font-weight: 400;
 }
 .grid-single{
-  width:90%;
+  width: 74%;
   margin:0em auto 0em auto;
 }
 .cricle{
